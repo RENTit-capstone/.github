@@ -1,12 +1,9 @@
-## Hi there 👋
+# 대학교내 물품 대여 SaaS RENTit
+![Frame 427322209](https://github.com/user-attachments/assets/a3a7259f-7a19-4b65-b610-a26e132cc576)
 
-<!--
-
-**Here are some ideas to get you started:**
-
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## 팀원 소개
+|이름|학과|학번|역할|
+|---|---|---|---|
+|김지환|소프트웨어학과|202020768|raspberry pi, frontend(app/web)|
+|박준우|소프트웨어학과|202020798|backend|
+|장지윤|소프트웨어학과|202127418|frontend(app/web)|
