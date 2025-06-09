@@ -30,7 +30,9 @@
 <summary><b>시스템 개요</b></summary>
 
 </br>
+
 ![architecture](https://github.com/user-attachments/assets/ce2576cf-a240-4773-8b6d-f87e2457140b)
+
 </br>
 
 </details>
@@ -54,7 +56,12 @@
 </br>
 
 ## 🗃️ 주요 기술 스택
-### Front-End(Web)
+
+<details>
+<summary><b> Front-End(Web) </b></summary>
+
+</br>
+
 | 기술 스택 | 사용 목적 및 선택 이유 |
 | --- | --- |
 | React | UI 컴포넌트 기반의 웹 애플리케이션 개발을 위해 사용한다. 팀원이 사전에 사용해본 경험이 있으며, 생태계가 풍부하고 유지보수가 용이한 구조를 제공한다. |
@@ -66,8 +73,16 @@
 | axios | 백엔드와 통신하는 API구현을 쉽게 하기 위해 사용하였다. Axios Instance, intercept 등의 기능을 제공하여 API 호출 함수를 쉽게 모듈화 할 수 있고, 공통 request 헤더, 자동 로그인 등을 적은 양의 코드로 구현할 수 있다. fetchAPI의 경우 response를 직접 JSON 형식으로 변환해야 하며 앞서 말한 기능을 직접 구현해야 하므로, axios를 사용하면 개발 속도 및 생산성을 높일 수 있을 것이라 기대하였다. |
 | TypeScript | 정적 타입 기반의 개발을 지원하기 위해 사용한다. 컴파일 타임에 오류를 방지하고, 협업 시에 코드 안정성을 향상시켜 에러 및 버그를 미연에 방지할 수 있다. |
 | recharts | 데이터를 시각화하는 컴포넌트를 제공한다. 간결한 문법으로 손쉽게 차트와 그래프 시각화를 구현할 수 있다. 동일한 데이터 시각화 라이브러리인 Chart.js도 고려하였으나, rechart가 통합, 문법 면에서 react에 더 친화적인 사항을 고려하였다. |
+</br>
 
-### Front-End(App)
+</details>
+
+
+<details>
+<summary><b> Front-End(App) </b></summary>
+
+</br>
+
 | 기술 스택 | 사용 목적 및 선택 이유 |
 | --- | --- |
 | React Native | Andriod와 iOS를 동시에 지원할 수 있으며, React 생태계와의 코드 공유가 가능하여 러닝커브가 낮고 개발 효율성이 높아서 사용한다. Flutter도 고려 대상이었으나, 팀원들이 React에 더 익숙하고, 도입까지 공부할 수 있는 시간이 부족하다고 판단하여 RN을 사용하게 되었다. |
@@ -77,7 +92,15 @@
 | expo router | 페이지 기반 자동 라우팅을 지원하여 디렉토리 구조가 곧 app의 사이트맵과 유사한 구조를 가진다. react navigation을 사용할 때 처럼 직접 설정해야 하는 부분이 적고, 구조에 적응하면 빠르게 익힐 수 있어 선택하였다. |
 | StyleSheet API | react-native 환경에서 기본적으로 styling을 적용하기 위한 tool이며, 많은 framework, library를 제치고 2024년 기준 개발자들이 2번째로 많이 사용함을 고려하였다. tamagui, react-native-paper, nativewind등 다른 UI library 및 tool도 테스트하였으나, 성능 저하, 버그, 지원하는 기능 등의 관점에서 StyleSheet API를 사용하는 것이 최선이라고 판단하였다. |
 
-### Back-End(Web/App)
+</br>
+
+</details>
+
+<details>
+<summary><b> Back-End(Web/App) </b></summary>
+
+</br>
+
 | 기술 스택 | 사용 목적 및 선택 이유 |
 | --- | --- |
 | Spring | 대규모 웹 애플리케이션에 적합한 구조와 생태계를 갖춘 프레임워크로, MVC 기반 REST API에 활용된다. |
@@ -95,7 +118,13 @@
 | Gradle | 프로젝트 의존성 관리 및 빌드 자동화를 위한 도구로, CI/CD 파이프라인과 연동하여 사용한다. |
 | Object Storage(NCP) | 물품 이미지 및 대여 관련 파일들을 저장하기 위한 정적 파일 스토리지로 사용한다. 또한, 프론트엔드의 정적파일을 서빙하는 용도로도 사용한다. |
 
-### Front-End(Raspberry Pi)
+</br>
+
+</details>
+
+<details>
+<summary><b> Front-End(Raspberry Pi) </b></summary>
+
 | 기술 스택 | 사용 목적 및 선택 이유 |
 | --- | --- |
 | HTML | 웹페이지의 기본 구조를 구성하기 위해 사용한다. |
@@ -104,3 +133,54 @@
 | Chromium | HTML, CSS, JS로 구성된 웹페이지를 Raspberry Pi에서 로컬 환경으로 구동하기 위해 사용한다. |
 | supeRThin | JS로 자체개발한 프론트엔드 프레임워크로, React나 Preact(React의 경량화 버전)보다 더 가볍게 구성되어 Raspberry Pi같은 저사양 환경에서도 충분히 구동된다. 상태관리, 컴포넌트 기반의 UI 개발을 통해, 프론트엔드 개발의 생산성을 높이기 위해 사용한다. |
 
+</br>
+
+</details>
+
+<details>
+<summary><b> Back-End(Rasberry Pi) </b></summary>
+
+
+| 기술 스택 | 사용 목적 및 선택 이유 |
+| --- | --- |
+| FastAPI | 프론트에서 입력 된 데이터와 RabbitMQ로부터 전달되는 데이터를 처리하고, 키오스크 내부 제어 로직을 수행하기 위한 경량 웹서버로 사용한다. |
+| FastAPI-MQTT | FastAPI와 RabbitMQ 간의 통신을 MQTT기반으로 구현하여, 비동기 메시지 수신 및 명령 수행을 지원하기에 사용한다. |
+| Python | FastAPI 및 zerogpio 등 주요 키오스크 제어 모듈을 구동하기 위한 기본 언어로 사용한다. |
+| zerogpio | Raspberry Pi 보드의 GPIO와 PWM을 Python 환경에서 관리하여, 물리적 락 제어나 센서 연동을 구현하기 위해 사용한다. |
+
+</br>
+
+</details>
+
+<details>
+<summary><b> MiddleWare </b></summary>
+
+| 기술 스택 | 사용 목적 및 선택 이유 |
+| --- | --- |
+| RabbitMQ | 메시지 기반의 브로커로, Spring Boot API서버와 Raspberry Pi의 FastAPI간 통신을 비동기적으로 중계하고 제어하기 위해 사용한다.
+Mosquitto도 고려 대상이었으나, NCP에서 RabbitMQ를 저렴한 가격에 제공 중이고, 다양한 관리 기능들을 통해 확장성을 더 제공해서 선택하게 되었다. |
+| MQTT Plugin | 기본적으로 AMQP 프로토콜 기반으로 동작하는 RabbitMQ를 MQTT 프로토콜도 지원하도록 확장하여, IoT 환경(Pi↔ 서버)과의 효율적인 통신을 구현하기 위해 사용한다. |
+
+</br>
+
+</details>
+
+
+<details>
+<summary><b> Cloud 및 Infrastructure 구성 </b></summary>
+
+| 기술 스택 | 사용 목적 및 선택 이유 |
+| --- | --- |
+| Global Edge(CDN) | 정적 웹 자산을 사용자들에게 빠르게 전달하고, 실제 정적 파일을 배포하는 Object Storage의 접근 부하를 줄이기 위해 사용한다. |
+| Gateway | 내부 서버 API를 외부로 연결하고, 이 과정에서 보안 및 인증을 강화하기 위해 사용한다. |
+| Object Storage | 이미지, 로그파일 등의 비정형 데이터를 저장하고, 또한 웹 페이지 정적 파일들을 배포하는 웹서버로서 동작하도록 하기 위해 사용한다. |
+| ALB(Application Load Balancer) | 트래픽을 Auto Scaling을 통해 증설된 Server Instance로 분산해주기 위해 사용한다. |
+| Server Instance | 백엔드 API 서버 등의 핵심 서비스를 호스팅하기 위해 사용한다. |
+| Auto Scaling | 사용량이 몰리는 시간 등에 Server Instance를 정해진 규칙에 따라 자동으로 늘리고 줄이기 위해 사용한다. |
+| Simple RabbitMQ | 키오스크와 서버 간의 메시지 통신을 관리하고, 비동기 처리를 통해 안정적인 연결을 지원하기 위해 사용한다. |
+| subnet | 네트워크를 논리적인 단계에서 분리하여 보안성과 관리 효율을 높히기 위해 사용한다. |
+| VPC | 격리된 네트워크 환경을 구축하여, 보안성과 제어력을 손쉽게 확보하기 위해 사용한다. |
+
+</br>
+
+</details>
