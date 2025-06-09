@@ -103,20 +103,24 @@
 
 | 기술 스택 | 사용 목적 및 선택 이유 |
 | --- | --- |
-| Spring | 대규모 웹 애플리케이션에 적합한 구조와 생태계를 갖춘 프레임워크로, MVC 기반 REST API에 활용된다. |
-| Spring boot | 복잡한 Spring의 설정을 자동화하여 빠른 개발을 지원하며, 내장 서버로 배포가 용이하여 사용한다. |
-| MySQL | 관계형 데이터베이스로, 대여 기록, 유저 정보 등 구조화된 데이터 관리를 위해 사용한다. |
-| Spring Security | 유저 인증과 인가를 위한 보안 프레임워크로, JWT 및 Role 기반 접근 제어 구현에 사용한다. |
-| Spring Data JPA | ORM 기반의 DB접근을 간소화하고, 생산성을 높이기 위해 사용한다. |
-| Query DSL | 복잡한 조건 검색에 유리하고, 동적 쿼리 생성을 안전하게 작성하기 위해 사용한다. |
-| JWT | 세션 없는 인증 방식으로, 모바일/웹 연동에 적합하며, 토큰 기반 인증 로직을 위해 사용한다. |
-| JUnit5 | 테스트 자동화를 위한 표준 프레임워크로, 서비스 품질 확보 및 회귀 테스트에 용이하여 사용한다. |
-| Firebase Cloud Notification | 대여 승인/반납 알림 등 실시간 푸시 알림 서비스를 사용자에게 제공하기 위해 사용한다. |
-| UnivCert | 대학교 이메일 인증을 하기 위해 사용한다. |
-| Paho-MQTT | MQTT 프로토콜을 사용해, RabbitMQ 브로커를 통해 Pi들과 통신하기 위해 사용한다. |
-| Java | Spring 생태계의 기본 언어로, 안정적인 서버 개발 및 유지보수에 적합하여 사용한다. |
-| Gradle | 프로젝트 의존성 관리 및 빌드 자동화를 위한 도구로, CI/CD 파이프라인과 연동하여 사용한다. |
-| Object Storage(NCP) | 물품 이미지 및 대여 관련 파일들을 저장하기 위한 정적 파일 스토리지로 사용한다. 또한, 프론트엔드의 정적파일을 서빙하는 용도로도 사용한다. |
+| Java 21 | Spring 생태계의 기본 언어, LTS 버전으로 높은 안정성을 보임. |
+| Spring Boot 3.4.4 | Java 웹 애플리케이션을 빠르고 쉽게 구축하기 위해 사용되는 프레임워크. 내장 서버, 자동 구성 등 개발 편의성을 제공함. |
+| Spring Web (MVC) | RESTful API를 생성하고 웹 요청을 처리하는 등 웹 애플리케이션의 컨트롤러 계층을 구축하기 위해 사용됨. |
+| Spring Data JPA | 데이터베이스와 상호작용하는 데이터 접근 계층을 쉽게 구현하기 위해 사용됨. 기본적인 CRUD 작업을 간단히 처리할 수 있음. |
+| QueryDSL | 컴파일 시점에 문법 오류를 잡을 수 있는 타입-세이프(Type-safe) 쿼리를 Java 코드로 작성하기 위해 사용됨. |
+| MySQL | 서비스 특성상 관계형 데이터베이스를 요구하기 때문에 사용.
+| H2 Database | 개발 초기나 단위 테스트 환경에서 실제 데이터베이스 없이 애플리케이션을 테스트하기 위해 사용. |
+| Spring Data Redis | 토큰 및 OTP 값을 효율적으로 관리하기 위해 사용. |
+| Spring Security | 애플리케이션의 인증과 인가 기능을 구현하기 위해 사용. |
+| JWT | RESTful API 환경에서 사용자의 인증 상태를 안전하게 유지하기 위해 사용. |
+| Spring Boot Starter Test | JUnit 5, Mockito 등 Spring Boot 애플리케이션을 테스트하는 데 필요한 핵심 라이브러리. |
+| Spring REST Docs | 테스트 코드를 기반으로 API 명세를 자동으로 생성하고 관리하기 위해 사용. 코드 기반이라 문서의 신뢰도가 높음. |
+| Asciidoctor | Spring REST Docs로 생성된 문서 스니펫을 조합하여 최종 HTML 문서를 생성하기 위해 사용. |
+| Jacoco | 테스트 코드의 코드 커버리지를 측정하고 리포트를 생성하기 위해 사용. |
+| Spring Boot Starter Mail | 회원가입 시 이메일 인증을 위해 사용. |
+| Firebase Admin SDK (FCM) | Firebase Cloud Messaging을 통해 모바일 앱에 푸시 알림을 발송하기 위해 사용. |
+| Spring Boot Actuator | 애플리케이션의 상태(헬스 체크, 메트릭 등)를 HTTP 엔드포인트를 통해 외부에서 모니터링하기 위해 사용. |
+| Micrometer (Prometheus) | Actuator가 수집한 메트릭을 Prometheus 모니터링 시스템이 수집할 수 있는 형식으로 변환하여 노출하기 위해 사용. |
 
 </br>
 
@@ -157,9 +161,8 @@
 
 | 기술 스택 | 사용 목적 및 선택 이유 |
 | --- | --- |
-| RabbitMQ | 메시지 기반의 브로커로, Spring Boot API서버와 Raspberry Pi의 FastAPI간 통신을 비동기적으로 중계하고 제어하기 위해 사용한다.
-Mosquitto도 고려 대상이었으나, NCP에서 RabbitMQ를 저렴한 가격에 제공 중이고, 다양한 관리 기능들을 통해 확장성을 더 제공해서 선택하게 되었다. |
-| MQTT Plugin | 기본적으로 AMQP 프로토콜 기반으로 동작하는 RabbitMQ를 MQTT 프로토콜도 지원하도록 확장하여, IoT 환경(Pi↔ 서버)과의 효율적인 통신을 구현하기 위해 사용한다. |
+| RabbitMQ / MQTT | MQTT 프로토콜을 사용하여 메시지를 발행하고 구독. Spring Boot API서버와 Raspberry Pi의 FastAPI간 통신을 비동기적으로 중계하고 제어하기 위해 사용. |
+
 
 </br>
 
